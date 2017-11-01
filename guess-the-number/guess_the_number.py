@@ -1,29 +1,28 @@
-import random
+from random import randint
 
-for x in range (1):
-    num_rand = random.randint(0,100)
+# Declarando inicialmente os valores globais
+MAX_NUMBER = 100
+TENTATIVAS = 5
+NUMERO_SORTEADO = randint(0, MAX_NUMBER)
 
-cont = 5
-adm = True
+# Função criada inicialmente para evitar código boilerplate
+def quantas_tentativas(numero):
+    print("Voce tem %i tentativas" %numero)
 
-while adm == True:
-
-    resp_user = input("Digite o seu numero de 0 a 100: ")
-    if resp_user > num_rand:
-        cont = cont - 1
-        print("O seu numero e maior, tente de novo")
-        print("Voce  tem {} tentativas".format(cont))
-        if cont == 0:
-            print ("Suas chances acabaram. :(")
-            adm = False
-
-    elif resp_user < num_rand:
-        cont = cont - 1
-        print("O seu numero e menor, tente de novo")
-        print("Voce tem {} tentativas".format(cont))
-        if cont == 0:
-            print ("Suas chances acabaram. :(")
-            adm = False
-    elif resp_user == num_rand:
-            print("Parabens! Voce acertou! :D")
-            adm = False
+while True:
+    resposta_usuario = int(input("Digite o seu numero de 0 a %i: " %MAX_NUMBER))
+    if resposta_usuario > NUMERO_SORTEADO:
+        TENTATIVAS -= 1
+        print("O seu numero é maior, tente de novo")
+        quantas_tentativas(TENTATIVAS)
+    elif resposta_usuario < NUMERO_SORTEADO:
+        TENTATIVAS -= 1
+        print("O seu numero é menor, tente de novo")
+        quantas_tentativas(TENTATIVAS)
+    elif resposta_usuario == NUMERO_SORTEADO:
+        print("Parabéns! Você acertou! :D")
+        break
+    if TENTATIVAS == 0:
+        print ("Suas chances acabaram. :(")
+        print("O número era %i" %NUMERO_SORTEADO)
+        break
