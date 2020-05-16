@@ -1,11 +1,13 @@
-#!-*- conding: utf8 -*-
 import random
 
 while True:
-    for x in range(1):
-        print random.randint(1,6)
-
-    resp = raw_input("Voce quer ir de novo? s/n  ")
-
-    if resp == 'n':
+    print('-=-='*10)
+    print(random.randint(1,6))
+    while True:
+        resp = str(input('Deseja continuar? [S / N] ')).upper()
+        if resp in 'SN':
+            break
+        else:
+            print('[\033[1;31mERROR\033[m] Código não pode ser aceito, tente de novo')
+    if resp == 'N':
         break
