@@ -4,3 +4,7 @@ Exercícios para aprendizado da linguagem Python encontrados no site: https://kn
 
 ### Mini-projeto 1: Simulador de dados
 Programa para simular um dado sendo jogado. 
+
+### Mini-projeto 2: Adivinhe um número
+Programa para simular um jogo em que se tem que advinhar o número 
+que o computador escolheu.
