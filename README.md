@@ -8,3 +8,7 @@ Programa para simular um dado sendo jogado.
 ### Mini-projeto 2: Adivinhe um número
 Programa para simular um jogo em que se tem que advinhar o número 
 que o computador escolheu.
+
+### Mini-projeto 3: Gerador de MadLib
+Programa que gera um texto sem nexo, desorganizado (MadLib) com 
+palavras digitas pelo usuário.
